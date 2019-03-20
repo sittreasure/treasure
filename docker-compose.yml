@@ -1,0 +1,38 @@
+version: '3'
+services:
+  database:
+    image: "mariadb"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+  phpMyAdmin:
+    image: "phpmyadmin/phpmyadmin"
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=database
+    links:
+      - database
+  minio:
+    image: "minio/minio"
+    ports:
+      - "9000:9000"
+    volumes:
+      - data1:/data
+    environment:
+      - MINIO_ACCESS_KEY_FILE=AKIAIOSFODNN7EXAMPLE
+      - MINIO_SECRET_KEY_FILE=wJalrXUtnFEMIaK7MDENGsbPxRfiCYEXAMPLEKEY
+    command: server /data
+  tomcat:
+    build: ./tomcat
+    ports:
+      - "8081:8080"
+    
+  jenkins:
+    image: "jenkins"
+    ports:
+      - "8082:8080"
+
+volumes:
+  data1:
