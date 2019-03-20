@@ -20,6 +20,7 @@ services:
       - "9000:9000"
     volumes:
       - data1:/data
+      - ./minio/:/root/.minio
     environment:
       - MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
       - MINIO_SECRET_KEY=wJalrXUtnFEMIaK7MDENGsbPxRfiCYEXAMPLEKEY
