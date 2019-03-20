@@ -21,8 +21,8 @@ services:
     volumes:
       - data1:/data
     environment:
-      - MINIO_ACCESS_KEY_FILE=AKIAIOSFODNN7EXAMPLE
-      - MINIO_SECRET_KEY_FILE=wJalrXUtnFEMIaK7MDENGsbPxRfiCYEXAMPLEKEY
+      - MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
+      - MINIO_SECRET_KEY=wJalrXUtnFEMIaK7MDENGsbPxRfiCYEXAMPLEKEY
     command: server /data
   tomcat:
     build: ./tomcat
