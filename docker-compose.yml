@@ -29,11 +29,16 @@ services:
     build: ./tomcat
     ports:
       - "8081:8080"
-    
+  jenkins-data:
+    build: ./jenkins/data
   jenkins:
-    image: "jenkins"
+    build: ./jenkins/master
     ports:
       - "8082:8080"
+    volumes:
+      - jenkins-data
+  
+  
 
 volumes:
   data1:
