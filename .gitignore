@@ -3,3 +3,5 @@
 frontend/
 fileAPI/
 mainAPI/
+*.crt
+*.key
