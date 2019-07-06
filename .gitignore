@@ -1,4 +1,8 @@
 .DS_Store
+*.classpath
+*.project
+*.settings/
+*target/
 
 frontend/
 fileAPI/
