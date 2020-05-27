@@ -1,0 +1,9 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+ name: konga-svc
+subsets:
+ - addresses:
+     - ip: 10.4.56.88
+   ports:
+     - port: 1337
